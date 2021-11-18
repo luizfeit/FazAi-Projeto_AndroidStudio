@@ -22,7 +22,7 @@
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Atividades"
+            android:text="@string/atividades"
             android:textAlignment="center"
             android:textColor="#64748B"
             android:textSize="30sp" />
@@ -31,7 +31,7 @@
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Titulo:"
+            android:text="@string/titulo"
             android:textColor="#64748B"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent" />
@@ -41,15 +41,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"
-            android:text="[Titulo]"
+            android:text="@string/tituloComChaves"
 
-            android:textColor="#64748B" />
+            android:textColor="#64748B"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Descrição:"
+            android:text="@string/descri_o"
             android:textColor="#64748B"
             android:textSize="20sp" />
 
@@ -58,15 +59,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"
-            android:text="[Descrição]"
+            android:text="@string/descri_oComChaves"
             android:textColor="#64748B"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prazo:"
+            android:text="@string/prazo"
             android:textColor="#64748B"
             android:textSize="20sp" />
 
@@ -75,15 +77,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"
-            android:text="[Prazo]"
+            android:text="@string/prazoComChaves"
             android:textColor="#64748B"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/textView24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Funcionario:"
+            android:text="@string/funcionario"
             android:textColor="#64748B"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent" />
@@ -93,8 +96,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"
-            android:text="[Funcionario]"
-            android:textColor="#64748B" />
+            android:text="@string/funcionarioComChaves"
+            android:textColor="#64748B"
+            tools:ignore="TextContrastCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -102,11 +106,11 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView34"
+                android:id="@+id/status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30sp"
-                android:text="#Status"
+                android:text="@string/status"
                 android:textAlignment="center"
                 android:textColor="#64748B"
                 android:textSize="30sp" />

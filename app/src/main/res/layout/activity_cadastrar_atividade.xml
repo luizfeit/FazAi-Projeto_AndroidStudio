@@ -31,9 +31,9 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Titulo:"
-                android:textColor="#64748B"
                 android:layout_gravity="center"
+                android:text="@string/titulo"
+                android:textColor="#64748B"
                 android:textSize="20sp" />
 
             <EditText
@@ -42,25 +42,25 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/inputstyles"
                 android:ems="10"
-                android:hint="Insira o Título aqui"
+                android:hint="@string/insira_o_titulo_aqui"
                 android:inputType="textPersonName"
                 android:textColor="#64748B"
-                tools:ignore="TouchTargetSizeCheck" />
-
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
+                android:importantForAutofill="no" />
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descrição:"
+                android:text="@string/descri_o"
                 android:textColor="#64748B"
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txdescricao"
                 android:layout_width="match_parent"
                 android:layout_height="138dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/iddescicao"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_gravity="start"
@@ -72,7 +72,7 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Data:"
+                android:text="@string/data"
                 android:textColor="#64748B"
                 android:textSize="20sp" />
 
@@ -80,9 +80,9 @@
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/colocar_data_aqui"
                 android:textColor="#64748B"
-                android:text="Selecione a Data" />
-
+                tools:ignore="TextContrastCheck" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -93,13 +93,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Funcionário: "
+                    android:text="@string/funcion_rio"
                     android:textColor="#64748B"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
                 <Spinner
-                    android:id="@+id/spfuncionario"
+                    android:id="@+id/spinner2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
