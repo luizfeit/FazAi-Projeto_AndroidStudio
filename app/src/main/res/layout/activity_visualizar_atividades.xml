@@ -37,7 +37,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/txtitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"
@@ -54,7 +54,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/txdescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"
@@ -71,7 +71,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/txprazo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"
@@ -89,7 +89,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/txfuncionario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14sp"

@@ -31,18 +31,18 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Titulo"
+                android:text="Titulo:"
                 android:textColor="#64748B"
                 android:layout_gravity="center"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/txtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/inputstyles"
                 android:ems="10"
-                android:hint="Insira o Titulo aqui"
+                android:hint="Insira o Título aqui"
                 android:inputType="textPersonName"
                 android:textColor="#64748B"
                 tools:ignore="TouchTargetSizeCheck" />
@@ -51,11 +51,12 @@
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descrição"
+                android:text="Descrição:"
                 android:textColor="#64748B"
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txdescricao"
                 android:layout_width="match_parent"
                 android:layout_height="138dp">
 
@@ -80,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#64748B"
-                android:text="Colocar data aqui" />
+                android:text="Selecione a Data" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,7 +99,7 @@
                     app:layout_constraintBottom_toBottomOf="parent" />
 
                 <Spinner
-                    android:id="@+id/spinner2"
+                    android:id="@+id/spfuncionario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />

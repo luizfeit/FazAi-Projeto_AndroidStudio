@@ -44,7 +44,7 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/txemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -67,7 +67,7 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/txsenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -80,7 +80,7 @@
             tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btnlogin"
             android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
@@ -98,7 +98,7 @@
             android:layout_gravity="center"
             android:background="@drawable/btnsecondary"
             android:padding="10dp"
-            android:text="@string/cadastra_se"
+            android:text="@string/cadastrar_se"
             android:textColor="#9575CD"
             tools:ignore="TextContrastCheck" />
 
