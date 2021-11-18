@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#581C87"
+    android:layout_height="match_parent"
+    tools:context=".TelaDeCadastroActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="41dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/telaloginstyles"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:shadowColor="@color/black"
+                android:text="@string/tela_de_cadastro"
+                android:textAlignment="center"
+                android:textColor="#64748B"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="@string/nome"
+                android:textColor="#64748B"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/inputstyles"
+                android:ems="10"
+                android:hint="@string/nome2"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="@string/e_mail"
+                android:textColor="#64748B"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/inputstyles"
+                android:ems="10"
+                android:hint="@string/e_mail2"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="@string/senha"
+                android:textColor="#64748B"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/inputstyles"
+                android:ems="10"
+                android:hint="@string/senha2"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="@string/confirmar_senha"
+                android:textColor="#64748B"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/inputstyles"
+                android:ems="10"
+                android:hint="@string/confirmar_senha2"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selecione_sua_fun_o"
+                android:textColor="#64748B"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:layout_width="457dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/funcion_rio"
+                    android:textColor="#64748B"
+                    android:textSize="18sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="257dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/administrador"
+                    android:textColor="#64748B"
+                    android:textSize="18sp"
+                    tools:ignore="TextContrastCheck" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/btncadastra_se"
+                android:padding="10dp"
+                android:text="@string/cadastra_se"
+                android:textColor="#ffffff"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnconfimarcadastro"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btnsecondary"
+                android:padding="10dp"
+                android:text="@string/cancelar"
+                android:textColor="#9575CD"
+                tools:ignore="TextContrastCheck" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

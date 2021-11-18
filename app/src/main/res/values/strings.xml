@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FazaAi(Projeto Pimentel)</string>
+    <string name="e_mail">E-mail: </string>
+    <string name="e_mail2">E-mail </string>
+    <string name="senha">Senha: </string>
+    <string name="senha2">Senha </string>
+    <string name="tela_de_login">Tela de Login</string>
+    <string name="login">Login</string>
+    <string name="cadastra_se">Cadastra-se</string>
+    <string name="tela_de_cadastro">Tela de Cadastro Usuário</string>
+    <string name="nome">Nome:</string>
+    <string name="nome2">Nome</string>
+    <string name="confirmar_senha">Confirmar Senha: </string>
+    <string name="confirmar_senha2">Confirmar Senha</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="selecione_sua_fun_o">Selecione sua função</string>
+    <string name="administrador">Administrador</string>
+    <string name="funcion_rio">Funcionário</string>
+    <string name="cadastro_de_atividades">Cadastro de Atividades</string>
+    <string name="todo">TODO</string>>
+</resources>
