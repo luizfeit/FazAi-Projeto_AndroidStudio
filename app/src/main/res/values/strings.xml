@@ -24,16 +24,11 @@
     <string name="data">Data:</string>
     <string name="funcionario">Funcionario:</string>
     <string name="atividades">Atividades</string>
-    <string name="titulo">Titulo:</string>
     <string name="tituloComChaves">[Titulo]</string>
-    <string name="descri_o">Descrição:</string>
     <string name="descri_oComChaves">[Descrição]</string>
     <string name="prazo">Prazo:</string>
     <string name="prazoComChaves">[Prazo]</string>
-    <string name="funcionario">Funcionario:</string>
     <string name="funcionarioComChaves">[Funcionario]</string>
     <string name="status">#Status</string>
-    <string name="insira_o_titulo_aqui">Insira o Titulo aqui</string>
-    <string name="data">Data:</string>
     <string name="colocar_data_aqui">Colocar data aqui</string>>
 </resources>
