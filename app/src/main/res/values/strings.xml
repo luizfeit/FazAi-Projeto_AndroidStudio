@@ -30,5 +30,14 @@
     <string name="prazoComChaves">[Prazo]</string>
     <string name="funcionarioComChaves">[Funcionario]</string>
     <string name="status">#Status</string>
-    <string name="colocar_data_aqui">Colocar data aqui</string>>
+    <string name="colocar_data_aqui">Colocar data aqui</string>
+    <string name="cadastrar">cadastrar</string>>
+    <string-array name="resp">
+        <item>Administrativo</item>
+        <item>Almoxarifado</item>
+        <item>Suporte TI</item>
+        <item>Recursos Humanos</item>
+        <item>Contabilidade</item>
+        <item>Jurídico</item>
+    </string-array>
 </resources>

@@ -37,7 +37,7 @@ public class TelaDeCadastroActivity extends Activity {
         try{
             db = openOrCreateDatabase("faz_assim", Context.MODE_PRIVATE, null);
         }catch (Exception e){
-            MostraMessagem ("Erro: " + e.toString());
+            MostraMensagem ("Erro: " + e.toString());
         }
 
         btCadastrar.setOnClickListener(new View.OnClickListener() {
@@ -67,9 +67,9 @@ public class TelaDeCadastroActivity extends Activity {
 
                 try{
                     db.insert("usuarios", null, valor);
-                    MostraMessagem("Registrado com Sucesso");
+                    MostraMensagem("Registrado com Sucesso");
                 }catch (Exception e){
-                    //MostraMessagem("Algo deu errado ao Cadastrar: " + e.printStackTrace());
+                    //MostraMensagem("Algo deu errado ao Cadastrar: " + e.printStackTrace());
                     e.printStackTrace();
                 }
 
@@ -77,7 +77,7 @@ public class TelaDeCadastroActivity extends Activity {
         });
 
     }
-    public void MostraMessagem(String str){
+    public void MostraMensagem(String str){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(TelaDeCadastroActivity.this);
         dialogo.setTitle("Aviso");
         dialogo.setMessage(str);

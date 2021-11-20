@@ -60,7 +60,7 @@
                 android:layout_height="138dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/iddescicao"
+                    android:id="@+id/txdescricao"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_gravity="start"
@@ -76,13 +76,19 @@
                 android:textColor="#64748B"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/datePickerButton"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="@string/colocar_data_aqui"
-                android:textColor="#64748B"
-                tools:ignore="TextContrastCheck" />
+                android:text="JAN 01 2021"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                style="?android:spinnerStyle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="10dp"
+                android:onClick="openDatePicker"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -105,6 +111,36 @@
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/telaloginstyles"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btncadastrar"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/btncadastra_se"
+                    android:padding="10dp"
+                    android:text="@string/cadastrar"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btncancelar"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btnsecondary"
+                    android:padding="10dp"
+                    android:text="@string/cancelar"
+                    android:textColor="#9575CD"
+                    tools:ignore="TextContrastCheck" />
+        </LinearLayout>
+
 
 
         </LinearLayout>
