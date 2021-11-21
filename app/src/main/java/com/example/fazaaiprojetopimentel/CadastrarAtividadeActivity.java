@@ -19,7 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class CadastrarAtividadeActivity extends Activity implements OnItemClickListener {
+public class CadastrarAtividadeActivity extends Activity {
 
     DatePickerDialog datePickerDialog;
     Button  btCadastrar, btCancelar, dateButton;
@@ -43,10 +43,10 @@ public class CadastrarAtividadeActivity extends Activity implements OnItemClickL
         txDescricao = (EditText) findViewById(R.id.txdescricao);
         spinner = (Spinner) findViewById(R.id.spinner2);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.resp, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemClickListener(this);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.resp, android.R.layout.simple_spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //spinner.setAdapter(adapter);
+        //spinner.setOnItemClickListener(this);
 
         try{
             db = openOrCreateDatabase("faz_assim", Context.MODE_PRIVATE, null);
@@ -176,18 +176,18 @@ public class CadastrarAtividadeActivity extends Activity implements OnItemClickL
         dialogo.show();
     };
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+    //Override
+    //public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-    };
+    //};
 
 
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-    };
+   // public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+     //   String text = parent.getItemAtPosition(position).toString();
+    //};
 
     
-    public void onNothingSelected(AdapterView<?> parent) {
+   //public void onNothingSelected(AdapterView<?> parent) {
 
-    };
+    //};
 }
