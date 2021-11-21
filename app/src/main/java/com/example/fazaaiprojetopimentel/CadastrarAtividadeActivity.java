@@ -24,7 +24,7 @@ public class CadastrarAtividadeActivity extends Activity {
     DatePickerDialog datePickerDialog;
     Button  btCadastrar, btCancelar, dateButton;
     EditText txTitulo, txDescricao;
-    Spinner spinner;
+    Spinner spinnerResp;
     SQLiteDatabase db;
 
     @Override
@@ -41,12 +41,10 @@ public class CadastrarAtividadeActivity extends Activity {
 
         txTitulo = (EditText) findViewById(R.id.txtitulo);
         txDescricao = (EditText) findViewById(R.id.txdescricao);
-        spinner = (Spinner) findViewById(R.id.spinner2);
+        spinnerResp = (Spinner) findViewById(R.id.spinner2);
 
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.resp, android.R.layout.simple_spinner_item);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //spinner.setAdapter(adapter);
-        //spinner.setOnItemClickListener(this);
+        String[] lsresp = getResources().getStringArray(R.array.resp);
+        spinnerResp.setAdapter(new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, lsresp));
 
         try{
             db = openOrCreateDatabase("faz_assim", Context.MODE_PRIVATE, null);
@@ -54,40 +52,34 @@ public class CadastrarAtividadeActivity extends Activity {
             MostraMensagem ("Erro: " + e.toString());
         }
 
-        btCadastrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String titulo = txTitulo.getText().toString();
-                String descricao = txDescricao.getText().toString();
-                String date = dateButton.getText().toString();
-                String responsavel = spinner.getSelectedItem().toString();
+        btCadastrar.setOnClickListener(v -> {
+            String titulo = txTitulo.getText().toString();
+            String descricao = txDescricao.getText().toString();
+            String date = dateButton.getText().toString();
+            String responsavel = lsresp.toString();
 
-                ContentValues valor = new ContentValues();
+            ContentValues valor = new ContentValues();
 
-                valor.put("titulo", titulo);
-                valor.put("descricao", descricao);
-                valor.put("date", (String) date);
-                valor.put("responsavel", responsavel);
+            valor.put("titulo", titulo);
+            valor.put("descricao", descricao);
+            valor.put("date", (String) date);
+            valor.put("responsavel", responsavel);
 
-                System.out.println(titulo + " " + descricao + " " + date + "" + responsavel);
+            System.out.println(titulo + " " + descricao + " " + date + "" + responsavel);
 
-                try{
-                    db.insert("atividade", null, valor);
-                    MostraMensagem("Registrado com Sucesso");
-                }catch (Exception e){
-                    //MostraMensagem("Algo deu errado ao Cadastrar: " + e.printStackTrace());
-                    e.printStackTrace();
-                }
-
+            try{
+                db.insert("atividade", null, valor);
+                MostraMensagem("Registrado com Sucesso");
+            }catch (Exception e){
+                //MostraMensagem("Algo deu errado ao Cadastrar: " + e.printStackTrace());
+                e.printStackTrace();
             }
+
         });
 
-        btCancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent cancelar = new Intent(CadastrarAtividadeActivity.this, MainActivity.class);
-                CadastrarAtividadeActivity.this.startActivity(cancelar);
-            }
+        btCancelar.setOnClickListener(view -> {
+            Intent cancelar = new Intent(CadastrarAtividadeActivity.this, MainActivity.class);
+            CadastrarAtividadeActivity.this.startActivity(cancelar);
         });
 
     }
@@ -104,15 +96,10 @@ public class CadastrarAtividadeActivity extends Activity {
 
     private void initDatePicker()
     {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
-        {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day)
-            {
-                month = month + 1;
-                String date = makeDateString(day, month, year);
-                dateButton.setText(date);
-            }
+        DatePickerDialog.OnDateSetListener dateSetListener = (datePicker, year, month, day) -> {
+            month = month + 1;
+            String date = makeDateString(day, month, year);
+            dateButton.setText(date);
         };
 
         Calendar cal = Calendar.getInstance();
@@ -174,7 +161,7 @@ public class CadastrarAtividadeActivity extends Activity {
         dialogo.setMessage(str);
         dialogo.setNeutralButton("Ok", null);
         dialogo.show();
-    };
+    }
 
     //Override
     //public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
