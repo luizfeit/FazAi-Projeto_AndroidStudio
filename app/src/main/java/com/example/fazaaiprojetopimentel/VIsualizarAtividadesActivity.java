@@ -19,19 +19,19 @@ public class VIsualizarAtividadesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizar_atividades);
 
+        imgSair = (ImageView) findViewById(R.id.imgsair);
         imgAdicionar = (ImageView) findViewById(R.id.imgadicionar);
 
-
-        imgAdicionar.setOnClickListener(new View.OnClickListener() {
+        imgSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent cadastrarAtividade = new Intent(VIsualizarAtividadesActivity.this,
-                        CadastrarAtividadeActivity.class);
+                        MainActivity.class);
                 VIsualizarAtividadesActivity.this.startActivity(cadastrarAtividade);
             }
         });
 
-        imgSair.setOnClickListener(new View.OnClickListener() {
+        imgAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent logout = new Intent(VIsualizarAtividadesActivity.this,
