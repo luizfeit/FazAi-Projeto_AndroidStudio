@@ -35,7 +35,7 @@ public class VIsualizarAtividadesActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent logout = new Intent(VIsualizarAtividadesActivity.this,
-                        TelaDeCadastroActivity.class);
+                        VisualizarTelaAdmActivity.class);
                 VIsualizarAtividadesActivity.this.startActivity(logout);
             }
         });

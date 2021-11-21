@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FazaAiProjetoPimentel">
         <activity
+            android:name=".VisualizarTelaAdmActivity"
+            android:exported="false" />
+        <activity
             android:name=".VIsualizarAtividadesActivity"
             android:exported="false" />
         <activity
