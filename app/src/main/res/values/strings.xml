@@ -17,7 +17,6 @@
     <string name="administrador">Administrador</string>
     <string name="funcion_rio">Funcionário</string>
     <string name="cadastro_de_atividades">Cadastro de Atividades</string>
-    <string name="todo">TODO</string>
     <string name="titulo">Titulo:</string>
     <string name="insira_o_titulo_aqui">Insira o Titulo aqui</string>
     <string name="descri_o">Descrição:</string>
@@ -31,7 +30,8 @@
     <string name="funcionarioComChaves">[Funcionario]</string>
     <string name="status">#Status</string>
     <string name="colocar_data_aqui">Colocar data aqui</string>
-    <string name="cadastrar">cadastrar</string>>
+    <string name="cadastrar">cadastrar</string>
+    <string name="todo">TODO</string>>
     <string-array name="resp">
         <item>Administrativo</item>
         <item>Almoxarifado</item>
