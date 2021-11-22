@@ -206,6 +206,7 @@ public class VisualizarTelaAdmActivity extends Activity {
                             "responsavel = '" + funcionario + "' where id = " + id);
 
                     MostraMessagem("Dados Alterados com Sucesso!");
+                    CarregarDados();
                 }catch (Exception e){
                     MostraMessagem("Erro:" + e.toString());
                 }
