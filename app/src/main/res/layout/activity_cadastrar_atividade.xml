@@ -104,11 +104,17 @@
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
-                <Spinner
-                    android:id="@+id/spinner2"
+                <EditText
+                    android:id="@+id/txfuncao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    android:background="@drawable/inputstyles"
+                    android:ems="10"
+                    android:hint="@string/insira_a_função_responsável"
+                    android:inputType="textPersonName"
+                    android:textColor="#64748B"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
+                    android:importantForAutofill="no" />
 
             </LinearLayout>
             <LinearLayout

@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.*;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,8 +24,7 @@ public class CadastrarAtividadeActivity extends Activity {
 
     DatePickerDialog datePickerDialog;
     Button  btCadastrar, btCancelar, dateButton;
-    EditText txTitulo, txDescricao;
-    Spinner spinnerResp;
+    EditText txTitulo, txDescricao, txFuncao;
     SQLiteDatabase db;
 
     @Override
@@ -41,10 +41,8 @@ public class CadastrarAtividadeActivity extends Activity {
 
         txTitulo = (EditText) findViewById(R.id.txtitulo);
         txDescricao = (EditText) findViewById(R.id.txdescricao);
-        spinnerResp = (Spinner) findViewById(R.id.spinner2);
+        txFuncao = (EditText) findViewById(R.id.txfuncao);
 
-        String[] lsresp = getResources().getStringArray(R.array.resp);
-        spinnerResp.setAdapter(new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, lsresp));
 
         try{
             db = openOrCreateDatabase("faz_assim", Context.MODE_PRIVATE, null);
@@ -56,7 +54,7 @@ public class CadastrarAtividadeActivity extends Activity {
             String titulo = txTitulo.getText().toString();
             String descricao = txDescricao.getText().toString();
             String date = dateButton.getText().toString();
-            String responsavel = lsresp.toString();
+            String responsavel = txFuncao.getText().toString();
 
             ContentValues valor = new ContentValues();
 
@@ -65,20 +63,22 @@ public class CadastrarAtividadeActivity extends Activity {
             valor.put("date", (String) date);
             valor.put("responsavel", responsavel);
 
-            System.out.println(titulo + " " + descricao + " " + date + "" + responsavel);
+            System.out.println(titulo + " " + descricao + " " + date + " " + responsavel);
 
             try{
-                db.insert("atividade", null, valor);
+                db.insert("atividades", null, valor);
                 MostraMensagem("Registrado com Sucesso");
+                Intent cadastrado = new Intent(CadastrarAtividadeActivity.this, VIsualizarAtividadesActivity.class);
+                CadastrarAtividadeActivity.this.startActivity(cadastrado);
             }catch (Exception e){
-                //MostraMensagem("Algo deu errado ao Cadastrar: " + e.printStackTrace());
+                //MostraMensagem("Algo deu errado ao Cadastrar: " + e.printError());
                 e.printStackTrace();
             }
 
         });
 
         btCancelar.setOnClickListener(view -> {
-            Intent cancelar = new Intent(CadastrarAtividadeActivity.this, MainActivity.class);
+            Intent cancelar = new Intent(CadastrarAtividadeActivity.this, VIsualizarAtividadesActivity.class);
             CadastrarAtividadeActivity.this.startActivity(cancelar);
         });
 

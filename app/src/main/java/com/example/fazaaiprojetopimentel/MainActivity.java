@@ -18,9 +18,6 @@ public class MainActivity extends Activity {
 
     Cursor c;
 
-
-    public String validaEmail, validaSenha;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +28,6 @@ public class MainActivity extends Activity {
 
         txEmail = (EditText) findViewById(R.id.txemail);
         txSenha = (EditText) findViewById(R.id.txsenha);
-
 
 
 
@@ -62,19 +58,30 @@ public class MainActivity extends Activity {
                     String email = txEmail.getText().toString();
                     String senha = txSenha.getText().toString();
 
-                    c = db.rawQuery("select email, senha from usuarios where email = ? and senha = ?",
-                          new String[]{email, senha});
 
-                    System.out.println(c);
+                    c = db.rawQuery("select email, senha, funcao from usuarios where email = ? and senha = ?",
+                          new String[]{email, senha });
+
+                    String funcao = "0";
+
+
+                    System.out.println("AQUIIII  " + funcao);
 
                         if(txEmail.getText().length() == 0 || txSenha.getText().length() == 0){
                             MostraMessagem("Preencha todos os campos");
 
                         }else if(c.getCount() > 0){
-                            limparTudo();
+                            if (funcao.equals("1")) {
+                                limparTudo();
                                 Intent telaVisualizarAtividade = new Intent(MainActivity.this,
                                         VIsualizarAtividadesActivity.class);
                                 MainActivity.this.startActivity(telaVisualizarAtividade);
+                            }else{
+                                limparTudo();
+                                Intent telaVisualizarAtividade = new Intent(MainActivity.this,
+                                        VisualizarTelaAdmActivity.class);
+                                MainActivity.this.startActivity(telaVisualizarAtividade);
+                            }
                         }
                         else{
                             limparLogin();

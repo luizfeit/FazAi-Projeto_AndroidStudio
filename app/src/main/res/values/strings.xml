@@ -33,7 +33,8 @@
     <string name="cadastrar">cadastrar</string>
     <string name="todo">TODO</string>
     <string name="excluir">Excluir</string>
-    <string name="alterar">Alterar</string>>
+    <string name="alterar">Alterar</string>
+    <string name="insira_a_função_responsável">Insira a função responsável</string>>
     <string-array name="resp">
         <item>Administrativo</item>
         <item>Almoxarifado</item>

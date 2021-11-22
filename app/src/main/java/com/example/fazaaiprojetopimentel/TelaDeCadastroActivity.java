@@ -68,11 +68,21 @@ public class TelaDeCadastroActivity extends Activity {
                 try{
                     db.insert("usuarios", null, valor);
                     MostraMensagem("Registrado com Sucesso");
+                    Intent cadastrado = new Intent( TelaDeCadastroActivity.this, MainActivity.class);
+                    TelaDeCadastroActivity.this.startActivity(cadastrado);
                 }catch (Exception e){
-                    //MostraMensagem("Algo deu errado ao Cadastrar: " + e.printStackTrace());
-                    e.printStackTrace();
+                    MostraMensagem("Algo deu errado ao Cadastrar: " + e.toString());
+
                 }
 
+            }
+        });
+
+        btCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cancelar = new Intent( TelaDeCadastroActivity.this, MainActivity.class);
+                TelaDeCadastroActivity.this.startActivity(cancelar);
             }
         });
 
