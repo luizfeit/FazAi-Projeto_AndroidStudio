@@ -68,7 +68,7 @@ public class CadastrarAtividadeActivity extends Activity {
             try{
                 db.insert("atividades", null, valor);
                 MostraMensagem("Registrado com Sucesso");
-                Intent cadastrado = new Intent(CadastrarAtividadeActivity.this, VIsualizarAtividadesActivity.class);
+                Intent cadastrado = new Intent(CadastrarAtividadeActivity.this, VisualizarTelaAdmActivity.class);
                 CadastrarAtividadeActivity.this.startActivity(cadastrado);
             }catch (Exception e){
                 //MostraMensagem("Algo deu errado ao Cadastrar: " + e.printError());

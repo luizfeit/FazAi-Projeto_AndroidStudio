@@ -57,21 +57,28 @@ public class MainActivity extends Activity {
                 try{
                     String email = txEmail.getText().toString();
                     String senha = txSenha.getText().toString();
+                    int funcao = 0;
 
 
-                    c = db.rawQuery("select email, senha, funcao from usuarios where email = ? and senha = ?",
-                          new String[]{email, senha });
+                    //c = db.rawQuery("select email, senha from usuarios where email = ? and senha = ?",
+                      //    new String[]{email, senha });
+                    String table = "table2";
+                    String[] columns = {"email", "senha", "funcao"};
+                    String selection = "email = ? AND senha = ?";
+                    String[] selectionArgs = {email, senha};
 
-                    String funcao = "0";
+                    c = db.query("usuarios", columns, selection, selectionArgs, null, null, null, null );
 
+                    //funcao = c.getInt(2);
 
-                    System.out.println("AQUIIII  " + funcao);
+                    //System.out.println("AQUIIII  " + funcao);
 
                         if(txEmail.getText().length() == 0 || txSenha.getText().length() == 0){
                             MostraMessagem("Preencha todos os campos");
 
-                        }else if(c.getCount() > 0){
-                            if (funcao.equals("1")) {
+                        }else if(!(c.getCount() == 0) && c.moveToFirst()){
+                            funcao = c.getInt(2);
+                            if (funcao == 1) {
                                 limparTudo();
                                 Intent telaVisualizarAtividade = new Intent(MainActivity.this,
                                         VIsualizarAtividadesActivity.class);

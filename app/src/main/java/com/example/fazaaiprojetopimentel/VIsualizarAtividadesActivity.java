@@ -48,23 +48,7 @@ public class VIsualizarAtividadesActivity extends Activity {
         try {
             db = openOrCreateDatabase("faz_assim", Context.MODE_PRIVATE, null );
 
-            c = db.query("atividades", new String []
-                    {"titulo", "descricao", "date", "responsavel"},
-                    null, null, null, null, null);
-
-            if (c.getCount() > 0) {
-                c.moveToFirst();
-                indice = 1;
-
-                txTitulo.setText("0");
-                txDescricao.setText("1");
-                txPrazo.setText("2");
-                txFuncionario.setText("3");
-
-                txStatus.setText(indice + "/" + c.getCount());
-            } else {
-                txStatus.setText("Nenhum Registro");
-            }
+            CarregarDados();
 
             imgPrimeiro.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -73,10 +57,10 @@ public class VIsualizarAtividadesActivity extends Activity {
                         c.moveToFirst();
                         indice = 1;
 
-                        txTitulo.setText("0");
-                        txDescricao.setText("1");
-                        txPrazo.setText("2");
-                        txFuncionario.setText("3");
+                        txTitulo.setText(c.getString(1));
+                        txDescricao.setText(c.getString(2));
+                        txPrazo.setText(c.getString(3));
+                        txFuncionario.setText(c.getString(4));
 
                         txStatus.setText(indice + "/" + c.getCount());
                     } else {
@@ -92,10 +76,10 @@ public class VIsualizarAtividadesActivity extends Activity {
                         c.moveToLast();
                         indice = c.getCount();
 
-                        txTitulo.setText("0");
-                        txDescricao.setText("1");
-                        txPrazo.setText("2");
-                        txFuncionario.setText("3");
+                        txTitulo.setText(c.getString(1));
+                        txDescricao.setText(c.getString(2));
+                        txPrazo.setText(c.getString(3));
+                        txFuncionario.setText(c.getString(4));
 
                         txStatus.setText(indice + "/" + c.getCount());
                     } else {
@@ -114,10 +98,10 @@ public class VIsualizarAtividadesActivity extends Activity {
                             indice ++;
                             c.moveToNext();
 
-                        txTitulo.setText("0");
-                        txDescricao.setText("1");
-                        txPrazo.setText("2");
-                        txFuncionario.setText("3");
+                            txTitulo.setText(c.getString(1));
+                            txDescricao.setText(c.getString(2));
+                            txPrazo.setText(c.getString(3));
+                            txFuncionario.setText(c.getString(4));
 
                         txStatus.setText(indice + "/" + c.getCount());
                     }
@@ -132,10 +116,10 @@ public class VIsualizarAtividadesActivity extends Activity {
                         indice --;
                         c.moveToPrevious();
 
-                        txTitulo.setText("0");
-                        txDescricao.setText("1");
-                        txPrazo.setText("2");
-                        txFuncionario.setText("3");
+                        txTitulo.setText(c.getString(1));
+                        txDescricao.setText(c.getString(2));
+                        txPrazo.setText(c.getString(3));
+                        txFuncionario.setText(c.getString(4));
 
                         txStatus.setText(indice + "/" + c.getCount());
                     }
@@ -155,14 +139,14 @@ public class VIsualizarAtividadesActivity extends Activity {
             }
         });
 
-        imgAdicionar.setOnClickListener(new View.OnClickListener() {
+        /*imgAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent logout = new Intent(VIsualizarAtividadesActivity.this,
-                        VisualizarTelaAdmActivity.class);
+                        CadastrarAtividadeActivity.class);
                 VIsualizarAtividadesActivity.this.startActivity(logout);
             }
-        });
+        });*/
 
     }
     public void MostraMessagem(String str){
@@ -171,5 +155,29 @@ public class VIsualizarAtividadesActivity extends Activity {
         dialogo.setMessage(str);
         dialogo.setNeutralButton("Ok", null);
         dialogo.show();
+    }
+    public void CarregarDados(){
+        c = db.query("atividades", new String []
+                        {"id", "titulo", "descricao", "date", "responsavel"},
+                null, null, null, null, null);
+
+        txTitulo.setText("");
+        txDescricao.setText("");
+        txPrazo.setText("");
+        txFuncionario.setText("");
+
+        if (c.getCount() > 0) {
+            c.moveToFirst();
+            indice = 1;
+
+            txTitulo.setText(c.getString(1));
+            txDescricao.setText(c.getString(2));
+            txPrazo.setText(c.getString(3));
+            txFuncionario.setText(c.getString(4));
+
+            txStatus.setText(indice + "/" + c.getCount());
+        } else {
+            txStatus.setText("Nenhum Registro");
+        }
     }
 }

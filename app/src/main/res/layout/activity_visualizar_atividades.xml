@@ -39,14 +39,6 @@
                 android:textColor="#64748B"
                 android:textSize="30sp" />
 
-            <ImageView
-                android:id="@+id/imgadicionar"
-                android:layout_width="22dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/img_adicionar"
-                tools:ignore="ImageContrastCheck" />
 
         </LinearLayout>
 

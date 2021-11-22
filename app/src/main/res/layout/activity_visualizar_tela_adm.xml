@@ -159,7 +159,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnexcluir"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="158dp"
                     android:layout_height="match_parent"
@@ -170,7 +170,7 @@
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnalterar"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
